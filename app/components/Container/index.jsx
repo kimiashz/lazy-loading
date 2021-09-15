@@ -24,7 +24,7 @@ function Container({
 } 
 
 Container.defaultProps = {
-    as: 'section',
+    as: 'div',
     className: undefined,
 };
   

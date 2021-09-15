@@ -2,7 +2,21 @@
 
 body
     font-size: $font-size-base
-    box-sizing: border-box
     background-color: $background-color
     margin: 0
     padding-top: $header-height
+
+    *
+        box-sizing: border-box
+        color: $font-color
+
+a
+    &, &:active, &:visited
+        color: inherit
+    
+    &:hover
+        color: $primary
+    
+
+    
+        

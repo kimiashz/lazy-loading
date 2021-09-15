@@ -5,16 +5,22 @@
     min-height: calc( 100vh - $header-height )
     display: grid
     grid-gap: $space
-    grid-template-areas: "content aside" "footer footer"
-    grid-template-columns: 1fr $aside-width
+    grid-template-areas: "aside content" "footer footer"
+    grid-template-columns: $aside-width 1fr
     grid-template-rows: 1fr $footer-height
 
     &__content
         grid-area: content
+        padding: $space 0
 
     &__aside
         grid-area: aside
+        padding: $space 0
 
     &__footer
         grid-area: footer
-        font-size: $font-size-small
+        font-size: $font-size-sm
+        text-align: center
+        padding: $space
+        color: $gray
+        border-top: $border
