@@ -1,7 +1,7 @@
 {
   "name": "lazy-loading",
   "version": "1.0.0",
-  "description": "Configure react and sass, with using lazy-loading for some part",
+  "description": "Install React, react-router, babel, webpack manually, Configure all of them to work together manually, Test for Using lazy-loading for Post-list.",
   "main": "index.js",
   "babel": {
     "presets": [
