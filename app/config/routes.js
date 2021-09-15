@@ -34,6 +34,7 @@ const routes = [
         component: Settings,
         exact: true,
         header: true,
+        aside: true,
     },
     {
         title: 'Not found',
