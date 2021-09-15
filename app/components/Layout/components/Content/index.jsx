@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import classNames from 'classnames';
 import { Switch, Route, Redirect } from "react-router-dom";
 
@@ -16,15 +16,17 @@ function Content({
 
     return (
         <article className={className}>
-            <Switch>
-                <Redirect exact from="/" to={paths.HOME} replace />
-                {routes.map(route => (
-                    <Route
-                        key={route.title}
-                        {...route}
-                    />
-                ))}
-            </Switch>
+            <Suspense fallback={<div>is Loading...</div>}>
+                <Switch>
+                    <Redirect exact from="/" to={paths.HOME} replace />
+                    {routes.map(route => (
+                        <Route
+                            key={route.title}
+                            {...route}
+                        />
+                    ))}
+                </Switch>
+            </Suspense>
         </article>
     )
 } 

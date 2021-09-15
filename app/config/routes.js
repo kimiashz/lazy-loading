@@ -1,6 +1,6 @@
 
 import Home from '/app/views/Home.jsx';
-import Posts from '/app/views/Posts.jsx';
+import Posts from '/app/views/Posts/index.js';
 import Profile from '/app/views/Profile.jsx';
 import Settings from '/app/views/Settings.jsx';
 import NotFound from '/app/views/NotFound.jsx';

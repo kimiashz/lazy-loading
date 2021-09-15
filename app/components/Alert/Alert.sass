@@ -1,0 +1,22 @@
+@import '~/app/styles/variables'
+
+.alert
+    color: $gray
+    background-color: $gray
+    padding: $space 0 $space $space
+
+    @mixin status($color)
+        color: $color
+        background-color: rgba($color, 0.05)
+
+    &--info
+        @include status($info)
+
+    &--warning
+        @include status($warning)
+
+    &--success
+        @include status($success)
+
+    &--error
+        @include status($error)
