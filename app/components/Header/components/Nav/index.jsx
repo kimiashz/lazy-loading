@@ -1,5 +1,8 @@
 import React from 'react';
- 
+import { Link } from "react-router-dom";
+
+import routes from '/app/config/routes.js';
+
 import './Nav.sass';
 
 const BLOCK = 'navigation';
@@ -7,8 +10,17 @@ const BLOCK = 'navigation';
 function Nav({}) {
     return (
         <nav className={BLOCK}>
-            <a className={`${BLOCK}__link`} href="" >Profile</a>
-            <a className={`${BLOCK}__link`} href="" >Settings</a>
+            {routes
+                .filter(({ header }) => Boolean(header))
+                .map(({ path, title }) => (
+                    <Link
+                        key={title}
+                        className={`${BLOCK}__link`}
+                        to={path}
+                    >
+                        {title}
+                    </Link>
+                ))}
         </nav>
     )
 } 

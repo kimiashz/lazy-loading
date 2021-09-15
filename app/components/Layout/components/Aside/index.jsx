@@ -1,5 +1,8 @@
 import React from 'react';
- import classNames from 'classnames';
+import classNames from 'classnames';
+import { NavLink } from "react-router-dom";
+
+import routes from '/app/config/routes.js';
 
 import './Aside.sass';
 
@@ -12,10 +15,20 @@ function Aside({
 
     return (
         <aside className={className}>
-            <a className={`${BLOCK}__link`} href="" >Home</a>
-            <a className={`${BLOCK}__link`} href="" >Posts</a>
-            <a className={`${BLOCK}__link`} href="" >Contact</a>
-            <a className={`${BLOCK}__link`} href="" >About</a>
+            <nav className={`${BLOCK}__container`}>
+                {routes
+                    .filter(({ aside }) => Boolean(aside))
+                    .map(({ path, title }) => (
+                        <NavLink
+                            key={title}
+                            activeClassName={`${BLOCK}__link--active`}
+                            className={`${BLOCK}__link`}
+                            to={path}
+                        >
+                            {title}
+                        </NavLink>
+                    ))}
+            </nav>
         </aside>
     )
 } 
