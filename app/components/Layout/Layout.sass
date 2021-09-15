@@ -1,0 +1,20 @@
+@import '~/app/styles/variables'
+
+.layout
+    width: 100%
+    min-height: calc( 100vh - $header-height )
+    display: grid
+    grid-gap: $space
+    grid-template-areas: "content aside" "footer footer"
+    grid-template-columns: 1fr $aside-width
+    grid-template-rows: 1fr $footer-height
+
+    &__content
+        grid-area: content
+
+    &__aside
+        grid-area: aside
+
+    &__footer
+        grid-area: footer
+        font-size: $font-size-small
