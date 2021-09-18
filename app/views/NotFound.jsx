@@ -1,12 +1,14 @@
 import React from 'react';
+import { Notify } from 'kimia-notify';
 
 const BLOCK = 'home';
 
 function NotFound({}) {
     return (
        <div className={BLOCK}>
-           <h1>404</h1>
-           Not Found.
+            <Notify warning delay={5000} >There is nothing to show.</Notify>
+            <h1>404</h1>
+            Not Found.
        </div>
     )
 } 

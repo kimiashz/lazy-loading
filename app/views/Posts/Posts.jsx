@@ -1,7 +1,8 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Notify } from 'kimia-notify';
 
-import Alert from '/app/components/Alert/index.jsx';
 import Post from '/app/components/Post/index.jsx';
+
 import { getPosts } from './requests.js';
 
 const BLOCK = 'posts';
@@ -25,14 +26,14 @@ function Posts({}) {
 
     function renderPosts() {
         if (loading) {
-            return <Alert info message="Post list is loading..." />;
+            return <div>Post list is loading...</div>;
         }
 
         if (!posts) {
-            return <Alert warning message="There is no post here." />;
+            return <div>There is no post here.</div>;
         }
 
-        return posts.map( post => <Post {...post} /> );
+        return posts.map( (post, index) => <Post key={index} {...post} /> );
     }
 
     

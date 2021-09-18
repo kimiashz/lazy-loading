@@ -1,8 +1,8 @@
 import React, { Suspense } from 'react';
 import classNames from 'classnames';
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { Notify } from 'kimia-notify';
 
-import Alert from '/app/components/Alert/index.jsx';
 import routes from '/app/config/routes.js';
 import * as paths from '/app/config/paths.js';
 
@@ -14,7 +14,7 @@ function Content({
     className: classNameProp,
 }) {
     const className = classNames(BLOCK, classNameProp);
-    const Loading = <Alert info message="Lazy Component is loading..." />;
+    const Loading = <Notify info delay={5000} >Lazy Component is loading...</Notify>;
 
     return (
         <article className={className}>

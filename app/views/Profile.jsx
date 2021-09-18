@@ -1,12 +1,14 @@
 import React from 'react';
+import { Notify } from 'kimia-notify';
 
 const BLOCK = 'profile';
 
 function Profile({}) {
     return (
        <div className={BLOCK}>
-           <h1>Profile</h1>
-           please change your profile.
+            <Notify success delay={5000} >Profile Page is Loaded.</Notify>
+            <h1>Profile</h1>
+            please change your profile.
        </div>
     )
 } 
